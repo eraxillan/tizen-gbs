@@ -524,6 +524,9 @@ class RepoParser(object):
             for url in repos:
                 if not url.startswith('http://') and \
                     not url.startswith('https://') and \
+                    not url.startswith('ftp://') and \
+                    not url.startswith('ftps://') and \
+                    not url.startswith('sftp://') and \
                     not (url.startswith('/') and os.path.exists(url)):
                     log.warning('ignore invalid repo url: %s' % url)
                 else:
